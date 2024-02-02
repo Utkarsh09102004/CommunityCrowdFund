@@ -26,11 +26,14 @@ class Initiative(models.Model):
     def __str__(self):
         return self.title
 
-class Contribution(models.Model):
-    contributor = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    initiative = models.ForeignKey(Initiative, on_delete=models.CASCADE)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-    timestamp = models.DateTimeField(auto_now_add=True)
+# class Contribution(models.Model):
+#     contributor = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+#     initiative = models.ForeignKey(Initiative, on_delete=models.CASCADE)
+#     amount = models.DecimalField(max_digits=10, decimal_places=2)
+#     timestamp = models.DateTimeField(auto_now_add=True)
+#     payment_id = models.CharField(max_length=100, blank=True, null=True)
+#     payment_status = models.CharField(max_length=50, blank=True, null=True)
+#
+#     def __str__(self):
+#         return f"{self.contributor.username} - {self.initiative.title}"
 
-    def __str__(self):
-        return f"{self.contributor.username} - {self.initiative.title}"
